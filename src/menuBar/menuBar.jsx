@@ -5,7 +5,7 @@ import Logo from "../logo/logo";
 function template() {
   return (
     <div className="menu-bar">
-    	<Logo iconWidth="30" iconHeight="30" fontSize="20" className="f1"></Logo>
+    	<Logo iconWidth="100" iconHeight="50" fontSize="20" className="f1"></Logo>
     	<div className="bar f1"></div>
       <ul className="snip1189 f20">
 		  <li className="current"><a href="">HOME</a></li>

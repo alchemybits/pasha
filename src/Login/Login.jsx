@@ -6,7 +6,7 @@ function template() {
   return (
   	<div>
 <div className="pen-title">
-   <Logo iconWidth="70" ></Logo>
+   <Logo iconWidth="270" iconHeight="200" ></Logo>
 </div>
 <div className="container">
   <div className="card"></div>
