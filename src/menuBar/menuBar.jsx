@@ -6,6 +6,7 @@ function template() {
   return (
     <div className="menu-bar">
     	<Logo iconWidth="100" iconHeight="50" fontSize="20" className="f1"></Logo>
+			<p>TESTING => <b>{this.props.islogged ? 'currently' : 'not'}</b></p>
     	<div className="bar f1"></div>
       <ul className="snip1189 f20">
 		  <li className="current"><a href="">HOME</a></li>
@@ -17,6 +18,9 @@ function template() {
 		  <li><a href="">CONTACT US</a></li>
 		  
 		</ul>
+
+
+		
 		
 		<div className="circular f1 dropdown-trigger" data-target='dropdown1'>
 			<img src="https://i.pinimg.com/236x/e4/cf/16/e4cf164b7139de40ec72aca74a0b7887--leo-star-spirit-animal.jpg" alt="" className="circle right"/>

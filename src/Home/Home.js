@@ -20,29 +20,9 @@ function mapStateToProps(state) {
 
 
 class Home extends React.Component {
+
 	constructor(){
 		super();
-
-		// this.state = {
-		// 	torneos :
-		// 	{ '12312312':
-		// 		{
-		// 			equipo1: 'Madrid',
-		// 			equipo2:'Barca'
-		// 		},
-		// 		'435345345':
-		// 			{
-		// 				equipo1: 'Olimpia',
-		// 				equipo2:'Motagua'
-		// 			},
-
-		// 		'3838394':
-		// 		{
-		// 			equipo1: 'PSG',
-		// 			equipo2:'Milan'
-		// 		}
-		// 	}
-		// }
 
 		this.increment = this.increment.bind(this);
 	}
@@ -65,21 +45,24 @@ class Home extends React.Component {
 	componentDidMount(){
 		var user = firebase.auth().currentUser;
 		if (user != null) {
-		  user.providerData.forEach(function (profile) {
-		    console.log(user);
-		  });
+		  this.logged = true;
 		}
+		else
+			this.logged = false;
+
+			console.log("***** => ",this.logged);
 	}
 
 	componentWillMount() {
 		this.props.getPartidos();
+		
 	}
 
   render() {
     return (
   	
     <div className="home">
-    	<MenuBar signOut={this.signOut}></MenuBar>
+    	<MenuBar signOut={this.signOut} islogged={this.logged}></MenuBar>
     	<img src="//cdn.shopify.com/s/files/1/1089/1046/t/3/assets/slide_5_1310x.jpg?7495267469806183633" alt=""/>
     </div>
     
