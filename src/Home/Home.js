@@ -7,6 +7,7 @@ import _ from 'lodash';
 
 import "./Home.css";
 import MenuBar from "../menuBar/menuBar";
+import Slider from "../Slider/Slider";
 import { connect } from 'react-redux';
 
 import { getPartidos } from '../Actions/torneoActions';
@@ -35,7 +36,8 @@ class Home extends React.Component {
 	    e.preventDefault();
 	    firebase.auth().signOut().then(function() {
 	      // Sign-out successful.
-	      alert("BYE!");
+				// alert("BYE!");
+				window.location.reload();
 	    }).catch(function(error) {
 	      // An error happened.
 	      alert("Yikes somethng HAPPEND",error);
@@ -63,7 +65,7 @@ class Home extends React.Component {
   	
     <div className="home">
     	<MenuBar signOut={this.signOut} islogged={this.logged}></MenuBar>
-    	<img src="//cdn.shopify.com/s/files/1/1089/1046/t/3/assets/slide_5_1310x.jpg?7495267469806183633" alt=""/>
+			<Slider></Slider>
     </div>
     
   );

@@ -25,6 +25,17 @@ constructor(props) {
 
   }
 
+  componentDidMount(){
+    const pathArray = this.props.location.pathname.split("/");
+    const found = pathArray.find(values => values=='register');
+    if(found){
+      const container = document.querySelector('.container');
+
+      this.setState({'isActive':true});
+      container.classList.add('active');
+    }
+  }
+
 
 
   register(e){

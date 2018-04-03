@@ -1,12 +1,23 @@
 import "./menuBar.css";
 import React from "react";
 import Logo from "../logo/logo";
+import ProfileMenu from "../ProfileMenu/ProfileMenu";
+
+
+
+function guest(){
+	return (
+		<div className="">
+			<b>new to pasha? <a href="/login">Log in</a> or <a href="/login/register">Register</a></b>
+		</div>
+	)
+}
 
 function template() {
   return (
     <div className="menu-bar">
     	<Logo iconWidth="100" iconHeight="50" fontSize="20" className="f1"></Logo>
-			<p>TESTING => <b>{this.props.islogged ? 'currently' : 'not'}</b></p>
+			
     	<div className="bar f1"></div>
       <ul className="snip1189 f20">
 		  <li className="current"><a href="">HOME</a></li>
@@ -18,22 +29,10 @@ function template() {
 		  <li><a href="">CONTACT US</a></li>
 		  
 		</ul>
-
-
 		
-		
-		<div className="circular f1 dropdown-trigger" data-target='dropdown1'>
-			<img src="https://i.pinimg.com/236x/e4/cf/16/e4cf164b7139de40ec72aca74a0b7887--leo-star-spirit-animal.jpg" alt="" className="circle right"/>
-		</div>
+		{this.props.islogged ? <ProfileMenu signOut={this.props.signOut}></ProfileMenu> : guest()}
 
-		  <ul id='dropdown1' className='dropdown-content'>
-		    <li><a href="">one</a></li>
-		    
-		    <li className="divider" tabIndex="-1"></li>
-		    
-		    
-		    <li><a href="" onClick={this.props.signOut}><i className="material-icons">highlight_off</i>Sign Out</a></li>
-		  </ul>
+		  
 		
     </div>
   );

@@ -2,3 +2,7 @@
 	font-family: 'Alfa Slab One', cursive;
 	font-weight: 100;
 }
+
+.logo {
+	cursor: pointer;
+}
