@@ -17,6 +17,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "create-react-component": "0.0.4",
     "lodash": "^4.17.5",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",

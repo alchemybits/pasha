@@ -1,12 +1,8 @@
 import React    from "react";
 import M    from "materialize-css";
-import template from "./menuBar.jsx";
+import template from "./ProfileMenu.jsx";
 
-class menuBar extends React.Component {
-
-	constructor(){
-		super();
-	}
+class ProfileMenu extends React.Component {
 
 	componentDidMount(){
 		var elem = document.querySelector('.dropdown-trigger');
@@ -14,10 +10,8 @@ class menuBar extends React.Component {
 	}
 
   render() {
-		const isLoggedIn = this.props.islogged;
-
     return template.call(this);
   }
 }
 
-export default menuBar;
+export default ProfileMenu;
