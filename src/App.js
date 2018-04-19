@@ -3,7 +3,7 @@ import * as firebase from 'firebase';
 import Login from './Login/Login';
 import Home from './Home/Home';
 import Loading from './Loading/Loading';
-import Landing from './Landing/Landing';
+// import Landing from './Landing/Landing';
 
 import { connect } from 'react-redux';
 
@@ -15,16 +15,16 @@ import {  BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-
   // Initialize Firebase
 
 
-function PrivateRoute ({component: Component, authed, ...rest}) {
-  return (
-    <Route
-      {...rest}
-      render={(props) => authed === true
-        ? <Component {...props} />
-        : <Redirect to={{pathname: '/login', state: {from: props.location}}} />}
-    />
-  )
-}
+// function PrivateRoute ({component: Component, authed, ...rest}) {
+//   return (
+//     <Route
+//       {...rest}
+//       render={(props) => authed === true
+//         ? <Component {...props} />
+//         : <Redirect to={{pathname: '/login', state: {from: props.location}}} />}
+//     />
+//   )
+// }
 
 function mapStateToProps(state) {
   return {

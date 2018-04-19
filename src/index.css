@@ -1,5 +1,7 @@
 body {
-  background: url('./assets/images/bg.png');
+  /* background: url('./assets/images/bg.png'); */
+  background: url(./assets/images/whitediamond.png);
+	background-repeat: repeat; 
   color: black;
   font-family: 'RobotoDraft', 'Roboto', sans-serif;
   font-size: 14px;
@@ -63,4 +65,13 @@ body {
 }
 .f20{
 	flex: 20;
+}
+
+.font{
+  font-family: 'Do Hyeon', sans-serif;
+  font-weight: 600;
+}
+
+.left-text {
+  text-align: left;
 }

@@ -1,10 +1,11 @@
 import React    from "react";
 import template from "./logo.jsx";
-import {  BrowserRouter as Redirect } from 'react-router-dom'
+import templateB from "./logoB.jsx";
+// import {  BrowserRouter as Redirect } from 'react-router-dom'
 
 
 
-class logo extends React.Component {
+class Logo extends React.Component {
   constructor(){
     super();
 
@@ -19,9 +20,38 @@ class logo extends React.Component {
     return template.call(this);
   }
 }
-logo.defaultProps = {
-	iconWidth: '80',
-	iconHeight: '80',
-	fontSize: '48'
+
+
+Logo.defaultProps = {
+  iconWidth: '80',
+  iconHeight: '80',
+  fontSize: '48'
 };
-export default logo;
+
+class LogoB extends React.Component {
+  constructor(){
+    super();
+
+    this.refresh = this.refresh.bind(this);
+  }
+
+  refresh(){
+    
+    if(!this.props.noclick)
+      window.location = "/";
+  }
+
+  render() {
+    return templateB.call(this);
+  }
+}
+
+
+LogoB.defaultProps = {
+  iconWidth: '80',
+  iconHeight: '80',
+  fontSize: '48'
+};
+
+
+export { Logo,LogoB }

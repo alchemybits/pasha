@@ -6,3 +6,16 @@
 .logo {
 	cursor: pointer;
 }
+
+.closedBox{
+	width:500px;
+	height:300px;
+	margin:auto;
+}
+
+.closedBox > svg {
+	position: relative;
+	bottom:250px;
+	right: 250px;
+
+}

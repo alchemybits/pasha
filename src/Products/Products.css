@@ -1,0 +1,15 @@
+.products {
+    border:3pt solid teal;
+    width:80vw;
+    position: relative;
+    margin:auto;
+}
+
+.product{
+    max-width:200px;
+    border:3pt solid gold;
+}
+
+.product img {
+    width:100%;
+}

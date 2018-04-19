@@ -1,17 +1,18 @@
 import React    from "react";
 import * as firebase from 'firebase';
 import {} from '../Firebase.js';
-import _ from 'lodash';
+// import _ from 'lodash';
 
 
 
 import "./Home.css";
 import MenuBar from "../menuBar/menuBar";
 import Slider from "../Slider/Slider";
+import Products from "../Products/Products";
 import { connect } from 'react-redux';
 
 import { getPartidos } from '../Actions/torneoActions';
-import { Field, reduxForm, reset } from 'redux-form';
+import {reduxForm } from 'redux-form';
 
 function mapStateToProps(state) {
   return {
@@ -63,9 +64,14 @@ class Home extends React.Component {
   render() {
     return (
   	
-    <div className="home">
+    <div className="home ">
     	<MenuBar signOut={this.signOut} islogged={this.logged}></MenuBar>
 			<Slider></Slider>
+			<div className="box font left-text">
+				<h4 >/ FEATURED PRODUCTS .</h4>
+			</div>	
+			
+			<Products></Products>
     </div>
     
   );

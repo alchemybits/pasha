@@ -6,7 +6,7 @@ class ProfileMenu extends React.Component {
 
 	componentDidMount(){
 		var elem = document.querySelector('.dropdown-trigger');
-  		var instance = M.Dropdown.init(elem);
+  	var instance = M.Dropdown.init(elem);
 	}
 
   render() {

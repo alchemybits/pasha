@@ -1,4 +1,21 @@
+@media (max-width: 900px) {
+  .extended { display: none !important; }
+}
+
+@media (min-width: 900) {
+  .extended { display: flex !important; }
+  .short {
+    display:none !important;
+  }
+}
+
+
 .menu-bar {
+  /*background-color: green;*/
+
+}
+
+.extended {
   display:flex;
   margin: 10px;
 }
