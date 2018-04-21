@@ -1,21 +1,34 @@
 import "./Products.css";
 import React from "react";
+import _ from 'lodash';
 
 function template() {
   return (
     <div className="products">
-       <div className="product">
-        <img src="../assets/images/Corfu-min.jpg" alt=""/>
-        <footer>
-          <div className="tittle">
-            CHAI
-          </div>
-          <div className="prodDescription">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt facere impedit vero repellendus vitae nobis dicta illo illum, natus aspernatur in sapiente dignissimos. Maxime sunt quo eligendi eaque, nulla nostrum?
-          </div>
-        </footer>
-       </div>
+      { _.map(this.props.productos, (producto, key) => {
+      		return (
+            <div className="product" key={key}>
+              <img src={producto.url} alt=""/>
+              <footer>
+                <div className="tittle">
+                  {producto.nombre}
+                </div>
+                <div className="prodDescription">
+                  {producto.desc}
+                </div>
+                <div className="price">
+                <div className="header">
+                  <span>$ </span>{producto.precio}
+                </div>
+                </div>
+                <div className="add-to-cart">ADD TO CART</div>
+              </footer>
+            </div>
+      			
+      		);
 
+        })
+      }
     </div>
   );
 };

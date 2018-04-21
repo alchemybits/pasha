@@ -1,15 +1,109 @@
 .products {
-    border:3pt solid teal;
+    /* border:3pt solid teal; */
     width:80vw;
     position: relative;
     margin:auto;
+    display: flex;
+    max-width: 80vw;
+    flex-wrap: wrap;
+    -webkit-align-items: flex-start; 
+    align-items: flex-start; 
+    justify-content: flex-start;
 }
 
+.products > * {
+    flex:1 auto;
+}
+
+
 .product{
-    max-width:200px;
-    border:3pt solid gold;
+    position: relative;
+    max-width:350px;
+    display:flex;
+    flex-direction: column;
+    margin:10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+    padding: 10px;
+    animation: Items 600ms 2s ease-in forwards;
+    opacity: 0;
+    
+
+}
+
+.product > * {
+    flex:1;
+    align-items: flex-start
 }
 
 .product img {
-    width:100%;
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
 }
+
+.tittle{
+    font-weight:bold;
+    font-size:30px;
+
+}
+
+.header span {
+    font-weight:bold;
+    font-size:10px;
+    color:#B68738;
+}
+
+.add-to-cart {
+	width: 216px;
+	height: 48px;
+	background: #ffab00;
+	font-size: 18px;
+	line-height: 48px;
+	letter-spacing: 2px;
+	color: rgb(255, 255, 255);
+	text-transform: uppercase;
+	-moz-border-radius: 24px;
+	-webkit-border-radius: 24px;
+	border-radius: 24px;
+	text-decoration: none;
+	text-align: center;
+    margin: 10px auto;
+	top: 48px;
+	display: block;
+	box-shadow: 0 3px 6px rgba(255, 171, 0, 0.16), 0 3px 6px rgba(255, 171, 0, 0.23);
+}
+
+@keyframes Items {
+    0% {
+      opacity: 0;
+      -webkit-transform: scale(0.3) rotateY(90deg);
+              transform: scale(0.3) rotateY(90deg);
+    }
+    60% {
+      -webkit-transform: scale(1.4);
+              transform: scale(1.4);
+    }
+    90% {
+      -webkit-transform: scale(0.9);
+              transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+@keyframes init {
+    0% {
+        top:-100px;
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.3;
+    }
+    100% {
+        top:0;
+        opacity: 1;
+    }
+  }

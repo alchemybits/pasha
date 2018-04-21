@@ -10,7 +10,9 @@ class menuBar extends React.Component {
 
 	componentDidMount(){
 		var elem = document.querySelector('.dropdown-trigger');
-  		var instance = M.Dropdown.init(elem);
+			var instance = M.Dropdown.init(elem);
+			
+			console.log("MENU BAR",this.props.islogged);
 	}
 
   render() {

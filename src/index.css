@@ -7,6 +7,7 @@ body {
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding:0 20px 20px 50px;
 }
 
 .bar {
@@ -63,6 +64,9 @@ body {
 .f5{
 	flex: 5;
 }
+.f10{
+  flex:10;
+}
 .f20{
 	flex: 20;
 }
@@ -74,4 +78,18 @@ body {
 
 .left-text {
   text-align: left;
+}
+
+.input-field .prefix.active{
+  color: #000 !important;
+}
+
+/* label focus color */
+.input-field input:focus + label {
+  color: #B68738 !important;
+}
+/* label underline focus color */
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #B68738 !important;
+  box-shadow: 0 1px 0 0 #B68738 !important
 }

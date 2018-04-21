@@ -28,6 +28,7 @@ function template() {
 					<li><a href="">IN STOCK</a></li>
 					{/* <li><a href="">B2B</a></li> */}
 					<li><a href="">CONTACT US</a></li>
+
 					
 				</ul>
 			

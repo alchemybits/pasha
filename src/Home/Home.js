@@ -11,20 +11,24 @@ import Slider from "../Slider/Slider";
 import Products from "../Products/Products";
 import { connect } from 'react-redux';
 
-import { getPartidos } from '../Actions/torneoActions';
+import { getProductos } from '../Actions/Actions';
 import {reduxForm } from 'redux-form';
 
 function mapStateToProps(state) {
+	console.log("state in props from HOME =>",state);
   return {
-    torneos: state.torneos
+    productos: state.productos
   };
 }
 
 
 class Home extends React.Component {
+	
 
 	constructor(){
 		super();
+
+		let logged = false;
 
 		this.increment = this.increment.bind(this);
 	}
@@ -46,18 +50,18 @@ class Home extends React.Component {
 	  }
 
 	componentDidMount(){
+	}
+
+	componentWillMount() {
 		var user = firebase.auth().currentUser;
 		if (user != null) {
+			console.log("====user===",user);
 		  this.logged = true;
 		}
 		else
 			this.logged = false;
 
-			console.log("***** => ",this.logged);
-	}
-
-	componentWillMount() {
-		this.props.getPartidos();
+		this.props.getProductos();
 		
 	}
 
@@ -65,13 +69,13 @@ class Home extends React.Component {
     return (
   	
     <div className="home ">
-    	<MenuBar signOut={this.signOut} islogged={this.logged}></MenuBar>
+    	<MenuBar signOut={this.signOut} islogged={this.logged} ></MenuBar>
 			<Slider></Slider>
 			<div className="box font left-text">
 				<h4 >/ FEATURED PRODUCTS .</h4>
 			</div>	
 			
-			<Products></Products>
+			<Products ></Products>
     </div>
     
   );
@@ -82,6 +86,6 @@ let form = reduxForm({
 	form: 'NewPost'
 })(Home);
 
-form = connect(mapStateToProps,{ getPartidos })(form);
+form = connect(mapStateToProps,{ getProductos })(form);
 
-export default connect(mapStateToProps,{ getPartidos })(Home);;
+export default connect(mapStateToProps,{ getProductos })(Home);
