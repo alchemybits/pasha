@@ -15,7 +15,7 @@ import { getProductos } from '../Actions/Actions';
 import {reduxForm } from 'redux-form';
 
 function mapStateToProps(state) {
-	console.log("state in props from HOME =>",state);
+	//console.log("state in props from HOME =>",state);
   return {
     productos: state.productos
   };
@@ -55,7 +55,7 @@ class Home extends React.Component {
 	componentWillMount() {
 		var user = firebase.auth().currentUser;
 		if (user != null) {
-			console.log("====user===",user);
+			//console.log("====user===",user);
 		  this.logged = true;
 		}
 		else

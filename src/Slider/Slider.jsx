@@ -18,7 +18,7 @@ function template() {
           {/* <img className="slideimg f1" src="/assets/images/SILVER SALE-02.jpg" alt=""/>
            */}
             <div className=" f1">
-              <img className="slideimg" src="/assets/images/SILVER SALE-02.jpg" alt=""/>
+              <img className="slideimg" src="https://firebasestorage.googleapis.com/v0/b/pasha-edb8f.appspot.com/o/productos%2FSILVER%20SALE-02.jpg?alt=media&token=10b5d3ca-932f-4f4b-8ef4-d81487bbcaa3" alt=""/>
             </div>
             <div className="f1">
               <div className="imgDescription f1">

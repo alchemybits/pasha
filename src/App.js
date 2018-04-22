@@ -17,7 +17,7 @@ import {  BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-
 
 
 function PrivateRoute ({component: Component, authed, ...rest}) {
-  console.log("$$$$$",authed);
+  //console.log("$$$$$",authed);
   return (
     
     <Route

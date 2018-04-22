@@ -18,7 +18,7 @@ class Slider extends React.Component {
   componentDidMount(){
     let slides = document.querySelectorAll(".slideswrap .slide");
     const slidesArray = Array.from(slides);
-    console.log(slidesArray);//slides in array
+    //console.log(slidesArray);//slides in array
 
     this.setState({
       slides: slidesArray
@@ -34,7 +34,7 @@ class Slider extends React.Component {
       
       if ( (" " + slide.className + " ").replace(/[\n\t]/g, " ").indexOf(" active ") > -1 ) //identify the slide with the class "active"
       {
-        console.log({slide,index});
+        //console.log({slide,index});
         slide.classList.remove("active");//removes the slide with the "active" class slide.
         if(index == len - 1){ // if the index of the slide is at the end of array
           targetindex = 0;  // set the next active slide's index to 0
@@ -58,7 +58,7 @@ class Slider extends React.Component {
       
       if ( (" " + slide.className + " ").replace(/[\n\t]/g, " ").indexOf(" active ") > -1 ) //identify the slide with the class "active"
       {
-        console.log({slide,index});
+        //console.log({slide,index});
         slide.classList.remove("active");//removes the slide with the "active" class slide.
         if(index == 0){ // if the index of the slide is at the end of array
           targetindex = len - 1;  // set the next active slide's index to 0

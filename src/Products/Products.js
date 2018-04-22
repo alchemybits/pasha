@@ -7,7 +7,7 @@ import { getProductos } from '../Actions/Actions';
 
 
 function mapStateToProps(state) {
-  console.log("state in props from PRODUCTS =>",state);
+  //console.log("state in props from PRODUCTS =>",state);
   return {
     productos: state.productos
   };

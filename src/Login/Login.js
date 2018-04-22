@@ -49,9 +49,9 @@ constructor(props) {
         user.updateProfile({
             displayName: this.state.name
         }).then(function() {
-            console.log("YES");
+            //console.log("YES");
         }, function(error) {
-            console.log("wat?");
+            //console.log("wat?");
         });        
     }, function(error) {
         // Handle Errors here.
