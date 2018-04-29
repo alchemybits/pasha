@@ -1,6 +1,7 @@
 import "./Slider.css";
 import React from "react";
 import { LogoB } from "../logo/logo";
+import LazyImage from "../LazyImage/LazyImage";
 
 function template() {
   return (
@@ -18,7 +19,7 @@ function template() {
           {/* <img className="slideimg f1" src="/assets/images/SILVER SALE-02.jpg" alt=""/>
            */}
             <div className=" f1">
-              <img className="slideimg" src="https://firebasestorage.googleapis.com/v0/b/pasha-edb8f.appspot.com/o/productos%2FSILVER%20SALE-02.jpg?alt=media&token=10b5d3ca-932f-4f4b-8ef4-d81487bbcaa3" alt=""/>
+            <LazyImage className="slideimg" unloadedSrc="../assets/images/clear.png" src="https://firebasestorage.googleapis.com/v0/b/pashav2-eef6b.appspot.com/o/productos%2FSILVER%20SALE-02.jpg?alt=media&token=15ec2726-e8bf-42be-9f20-072ee591ac75" ></ LazyImage>
             </div>
             <div className="f1">
               <div className="imgDescription f1">

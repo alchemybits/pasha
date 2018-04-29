@@ -4,7 +4,7 @@ import React from "react";
 function template() {
   return (
     <div className="logo" onClick={this.refresh}>
-      <h5 style={{fontSize: this.props.fontSize + 'px'}} >
+      
       	<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 100 800 700' height={this.props.iconHeight}
 width={this.props.iconWidth} id='svg2'>
     <g transform='matrix(1.33333 0 0 -1.33333 0 816)' id='g10'>
@@ -18,7 +18,7 @@ width={this.props.iconWidth} id='svg2'>
         </g>
     </g>
 </svg>
-      </h5>
+      
     </div>
   );
 };

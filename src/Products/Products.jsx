@@ -1,6 +1,7 @@
 import "./Products.css";
 import React from "react";
 import _ from 'lodash';
+import LazyImage from "../LazyImage/LazyImage";
 
 function template() {
   return (
@@ -8,7 +9,7 @@ function template() {
       { _.map(this.props.productos, (producto, key) => {
       		return (
             <div className="product" key={key}>
-              <img src={producto.url} alt=""/>
+              <LazyImage unloadedSrc="../assets/images/clear.png" src={producto.url} ></ LazyImage>
               <footer>
                 <div className="tittle">
                   {producto.nombre}

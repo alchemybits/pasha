@@ -1,13 +1,13 @@
  import * as firebase from 'firebase';
 
  var config = {
-    apiKey: "AIzaSyCUa8tU5cQzFWJvJ9rnI_9LYJ-zLB2Z4mY",
-    authDomain: "pasha-edb8f.firebaseapp.com",
-    databaseURL: "https://pasha-edb8f.firebaseio.com",
-    projectId: "pasha-edb8f",
-    storageBucket: "pasha-edb8f.appspot.com",
-    messagingSenderId: "524937301785"
-  };
+  apiKey: "AIzaSyDH2nrDlZqBLfKuyLNdvR7thVqQ9ZCwUG0",
+  authDomain: "pashav2-eef6b.firebaseapp.com",
+  databaseURL: "https://pashav2-eef6b.firebaseio.com",
+  projectId: "pashav2-eef6b",
+  storageBucket: "pashav2-eef6b.appspot.com",
+  messagingSenderId: "1057047902110"
+};
 
   firebase.initializeApp(config);
 

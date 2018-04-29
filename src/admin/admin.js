@@ -17,10 +17,47 @@ class admin extends React.Component {
     
 
     this.file = e.target.files[0];
+    document.getElementById('my-input-id').disabled = false;
     //console.log("====change===",this.file);
 
    
     
+  }
+
+  close(e){
+    const toast = document.querySelector(".toast");
+
+    toast.classList.remove("on");
+  }
+
+  check(e){
+    const name = document.getElementById('name');
+    const price = document.getElementById('price');
+    const description = document.getElementById('desc');
+    const pic = document.getElementById('pic');
+    
+    let check = false;
+
+    if(name.value != "")
+      if(price.value != "")
+        if(description.value != "")
+          if(pic.value != "")
+            check = true;
+          else
+            check = false;
+        else
+          check = false;
+      else
+       check = false;
+    else
+      check = false;
+
+    if(check){
+      document.getElementById('my-input-id').disabled = false;
+    }
+    else
+      document.getElementById('my-input-id').disabled = true;
+
   }
 
   newProduct(event){
@@ -30,23 +67,46 @@ class admin extends React.Component {
     const PRICE = this.precio.value;
     const DESC = this.description.value;
 
-    // const wrap = document.querySelector(".file-upload-wrapper");
-    //console.log("wrap");
-    // wrap.setAttribute('data-text',  this.file.name.replace(/.*(\/|\\)/, ''));
+    const pCon = document.querySelector(".progressContainer");
+    pCon.style.display = "block";
+    
+    const pbar = document.querySelector("#progressBar");
+    const size = document.querySelector("#size");
+    const toast = document.querySelector(".toast");
+    document.getElementById('my-input-id').disabled = true;
+    const name = document.getElementById('name');
+    const price = document.getElementById('price');
+    const description = document.getElementById('desc');
+    const pic = document.getElementById('pic');
 
+
+    name.value = "";
+    price.value = "";
+    description.value = "";
+    
+    
+
+
+
+    
+    // wrap.setAttribute('data-text',  this.file.name.replace(/.*(\/|\\)/, ''));
+    
     let storageRef = firebase.storage().ref('productos/' + this.file.name);
 
     let task = storageRef.put(this.file);
+
+    function formatBytes(a,b){if(0==a)return"0 Bytes";var c=1024,d=b||2,e=["Bytes","KB","MB","GB","TB","PB","EB","ZB","YB"],f=Math.floor(Math.log(a)/Math.log(c));return parseFloat((a/Math.pow(c,f)).toFixed(d))+" "+e[f]}
 
    
 
     task.on('state_changed',
       function progress(snapshot) {
         let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        //console.log( "PERCENT", snapshot);
+        size.innerHTML = formatBytes(snapshot.totalBytes);
+        pbar.value = percentage;
       },
       function error(err){
-        //console.log("ERRRORRRR UPLOADING");
+        alert("oops, something happend!",err);
       },
       function complete(pic){
         productos.push({
@@ -55,6 +115,10 @@ class admin extends React.Component {
           desc: DESC,
           url: task.snapshot.downloadURL
         });
+
+        pCon.style.display = "none";
+        toast.classList.add("on");
+
       }
     )
 
