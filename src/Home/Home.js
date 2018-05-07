@@ -7,12 +7,15 @@ import {} from '../Firebase.js';
 
 import "./Home.css";
 import MenuBar from "../menuBar/menuBar";
-import Slider from "../Slider/Slider";
-import Products from "../Products/Products";
+import Collection from "../Collection/Collection";
+import Landing from "../Landing/Landing";
+
 import { connect } from 'react-redux';
 
 import { getProductos } from '../Actions/Actions';
 import {reduxForm } from 'redux-form';
+
+import {  BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 
 function mapStateToProps(state) {
 	//console.log("state in props from HOME =>",state);
@@ -70,12 +73,15 @@ class Home extends React.Component {
   	
     <div className="home ">
     	<MenuBar signOut={this.signOut} islogged={this.logged} ></MenuBar>
-			<Slider></Slider>
-			<div className="box font left-text">
-				<h4 >/ FEATURED PRODUCTS .</h4>
-			</div>	
 			
-			<Products ></Products>
+    	<Router>
+    		<Switch>
+					<Route path = "/collection" component = {Collection}/>
+					<Route path = "/" component = {Landing}/>
+			</Switch>
+		</Router>
+
+			
     </div>
     
   );

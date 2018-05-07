@@ -3,7 +3,7 @@ import template from "./Products.jsx";
 import { connect } from 'react-redux';
 
 
-import { getProductos } from '../Actions/Actions';
+import { getFeaturedProductos } from '../Actions/Actions';
 
 
 function mapStateToProps(state) {
@@ -17,15 +17,23 @@ class Products extends React.Component {
 
   
   constructor(){
-		super();
+    super();
+    
+    this.state = {
+      productos: ["0"]
+    };
 	}
 
   componentDidMount(){
     
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({ productos: nextProps.productos });  
+  }
+
   componentWillMount() {
-    this.props.getProductos();
+    this.props.getFeaturedProductos();
   }
   
   render() {
@@ -33,4 +41,4 @@ class Products extends React.Component {
   }
 }
 
-export default connect(mapStateToProps,{ getProductos })(Products);
+export default connect(mapStateToProps,{ getFeaturedProductos })(Products);

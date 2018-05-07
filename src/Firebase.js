@@ -13,5 +13,6 @@
 
   export const database = firebase.database().ref('/');
   export const productos = firebase.database().ref('Productos/');
+  export const featuredProductos = firebase.database().ref('Productos/');
   // export const addProducto = firebase.child("Productos");
 

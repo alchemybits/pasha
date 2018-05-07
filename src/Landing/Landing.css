@@ -1,0 +1,40 @@
+.frontImage{
+    /* border:1pt solid black; */
+    height:400px;
+    overflow:hidden;
+    position: relative;
+    animation: fadeIn 2s forwards;
+}
+
+.frontImage > img {
+    width:100%;
+    min-width: 800px ;
+    bottom:-100px;
+    left:0;
+    position: absolute;
+}
+
+@media (max-width:750px){
+    .frontImage > img { 
+        left:-20% !important;
+        
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        top:-500px;
+        height:0px;
+    }
+    50% {
+        opacity: 0.1;
+        height: 0px;
+        
+    }
+    100% {
+        opacity: 1;
+        top:0;
+        height: 400px;
+    }
+}
