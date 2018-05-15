@@ -1,5 +1,8 @@
 import { productos,database,featuredProductos } from '../Firebase';
+import _  from 'lodash';
+
 export const FETCH_PRODUCTOS = 'fetch_productos';
+
 
 export function getPartidos(){
 	//console.log("function worked");
@@ -16,7 +19,7 @@ export function getPartidos(){
 	}
 }
 
-export function getProductos(queryText){
+export function getProductos(cat,subcat,queryText){
 	console.log("THIS IS THE QUERY",queryText);
 	return dispatch => { 
 		//console.log("dispatching...");
@@ -24,17 +27,30 @@ export function getProductos(queryText){
 		try {
 			featuredProductos.orderByChild("nombre").startAt(queryText)
 		.endAt(queryText+"\uf8ff").on('value', data => {
-			console.log(data.val());
 			if(!data.val())
 			dispatch({
 				type: FETCH_PRODUCTOS,
 				payload: {918282918:{sorry:"No values found...",url:"#"}}
 			})
-			else
-			dispatch({
-				type: FETCH_PRODUCTOS,
-				payload: data.val()
-			})
+			else{
+				let productos = Object.values(data.val());
+				let obj = []; //_.filter( productos, { 'categoria': "Flats" });
+				if(!cat)
+					obj = productos;
+				if(cat)
+					obj = _.filter( productos, { 'categoria': cat });
+				if(cat && subcat)
+					obj = _.filter( productos, { 'categoria': cat, 'subcategoria':subcat });
+
+				
+
+				console.log("NEW OBJ", obj );
+				dispatch({
+					type: FETCH_PRODUCTOS,
+					payload: obj
+				})
+			}
+			
 		})
 			
 		} catch (error) {

@@ -1,5 +1,15 @@
+.space {
+  display:none;
+}
+
 @media (max-width: 900px) {
-  .extended { display: none !important; }
+  .extended { display: none !important;
+  }
+  .space {
+    height:70px;
+    width:50px;
+    display:block;
+  }
 }
 
 @media (min-width: 899px) {
@@ -7,6 +17,8 @@
     display:none !important;
   }
 }
+
+
 
 .menu-bar{
   position: relative;
@@ -17,7 +29,7 @@
   background:whitesmoke;
   border-right:1pt solid #D4BF7F;
   height:100%;
-  width:200px;
+  width:150px;
   top:0;
   left:-200px;
   z-index:99;
@@ -27,9 +39,9 @@
 .leftMenu{
   position:absolute;
   top:50px;
-  left:-20px;
+  left:80px;
   
-  width:100%;
+  width:200px;
   
 }
 
@@ -37,6 +49,7 @@
   display:flex;
   margin: 5px;
   border-bottom:0.5pt solid #D4BF7F;
+  
 }
 
 .snip1189 {
@@ -115,11 +128,16 @@
 }
 
 .logWrapper{
-  position: absolute;
-  left:0;
-  bottom:25px;
   color:grey;
   cursor: pointer;
+  text-align: center;
+  
+  
+}
+
+.logWrapper > * {
+  text-align: center;
+  vertical-align: middle;
 }
 
 .menu-wrapper {
@@ -131,6 +149,7 @@
   height: 23px;
   cursor: pointer;
   z-index:100;
+  
 }
 
 .hamburger-menu,
@@ -181,11 +200,18 @@
 }
 
 .open {
+  left:-100px;
   animation: open 1s forwards;
 }
 
 .close {
+  overflow:hidden;
+  left:-20px;
   animation: close 1s forwards;
+}
+
+.resizeLogo {
+  height: 100px;
 }
 
 .fixed {
@@ -195,14 +221,14 @@
 
 @keyframes open {
   0%{
-    opacity:0;
+    opacity:0 !important;
   }
-  50%{
+  80%{
     opacity: 0.1;
   }
   100% {
     opacity:1;
-    left:0px;
+    left:10px !important;
   }
 }
 

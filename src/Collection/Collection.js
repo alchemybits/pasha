@@ -32,7 +32,14 @@ class Collection extends React.Component {
   // }
 
   componentWillMount() {
-    this.props.getProductos();
+    const cat = this.props.match.params.cat;
+    const subcat = this.props.match.params.subcat;
+    this.props.getProductos(cat,subcat);
+      
+  }
+
+  componentDidMount(){
+    
   }
 
   search(){
@@ -45,9 +52,17 @@ class Collection extends React.Component {
     
   }
 
+  goTo(query){
+    if(query)
+    window.location = query;
+  }
+
   searchQuery(e){
     e.preventDefault();
-    this.props.getProductos(document.getElementById("searchbar-input").value);
+
+    const cat = this.props.match.params.cat;
+    const subcat = this.props.match.params.subcat;
+    this.props.getProductos(cat,subcat,document.getElementById("searchbar-input").value);
   }
 
   render() {

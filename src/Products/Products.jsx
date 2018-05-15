@@ -26,7 +26,8 @@ function template() {
                 </div>
                 <div className="price">
                 <div className="header">
-                  <span>$ </span>{producto.precio}
+                  <span>$</span>{producto.precio}
+                  <span> <h1>{producto.categoria}-{producto.subcategoria}</h1></span>
                 </div>
                 </div>
                 <div className="add-to-cart">ADD TO CART</div>

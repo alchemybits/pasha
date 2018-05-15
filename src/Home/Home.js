@@ -76,6 +76,8 @@ class Home extends React.Component {
 			
     	<Router>
     		<Switch>
+					<Route path = "/collection/:cat/:subcat" component = {Collection}/>
+					<Route path = "/collection/:cat" component = {Collection}/>
 					<Route path = "/collection" component = {Collection}/>
 					<Route path = "/" component = {Landing}/>
 			</Switch>

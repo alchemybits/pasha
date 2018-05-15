@@ -7,6 +7,10 @@ function template() {
   
   return (
     <div className="featured-products">
+    {/* <div>
+    <video muted autoPlay className="objetFit" src="https://firebasestorage.googleapis.com/v0/b/pashav2-eef6b.appspot.com/o/productos%2FPasha.mp4?alt=media&token=573b7806-0508-4618-beea-9f79993f954b"></video>
+    </div> */}
+    
       {
         
         (Object.values(this.props.productos)).map((producto,key) => {
@@ -36,11 +40,12 @@ function template() {
                 </div>
                 <div className="price">
                 <div className="header">
-                  <span>$ </span>{producto.precio}
+                
+                  <span> <h1>{producto.categoria}-{producto.subcategoria}</h1></span>
                 </div>
                 </div>
                 <br/>
-                <FancyButton type={12} desc="ADD TO CART"></FancyButton>
+                <FancyButton type={12} desc="MORE INFO"></FancyButton>
               </footer>
             </div>
           )

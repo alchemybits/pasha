@@ -25,7 +25,7 @@
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
     padding: 10px;
     /* animation: init 2s 1s ease-in forwards; */
-    animation: init 2s forwards;
+    animation: init 1s forwards;
     opacity: 0;
     
 

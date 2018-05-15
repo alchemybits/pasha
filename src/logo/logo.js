@@ -48,9 +48,9 @@ class LogoB extends React.Component {
 
 
 LogoB.defaultProps = {
-  iconWidth: '80',
-  iconHeight: '80',
-  fontSize: '48'
+  iconWidth: '1056',
+  iconHeight: '816',
+  fontSize: '48',
 };
 
 
