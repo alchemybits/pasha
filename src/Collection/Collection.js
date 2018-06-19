@@ -2,16 +2,18 @@ import React    from "react";
 import template from "./Collection.jsx";
 import swal from "sweetalert2";
 import { connect } from 'react-redux';
-import { getProductos } from '../Actions/Actions';
+import { getProductos,getThumbnails } from '../Actions/Actions';
 
 function mapStateToProps(state) {
 
   //console.log("state in props from PRODUCTS =>",state);
   return {
-    productos: state.productos
+    productos: state.productos,
+    thumbnails: state.thumbnails
   };
 }
 
+//TODO: loading before products appear get on all page so when #scroll goes deeper.
 
 class Collection extends React.Component {
 
@@ -25,6 +27,28 @@ class Collection extends React.Component {
     this.ssearchQueryearch = this.searchQuery.bind(this);
   }
 
+  getThumbnail(s){
+
+		let arre = [];
+		let tbs = Object.values(this.props.thumbnails);
+		let tbn = ""
+		s = s.substring(0, s.indexOf('?'));
+		var n = s.lastIndexOf('/');
+		s = s.substring(n + 1);
+
+		tbs.map(tb =>{
+			if(tb.path.includes(s)){
+				tbn = tb.thumbnail;
+			}
+			
+
+		})
+
+		return tbn;
+
+
+	}
+
   // componentWillReceiveProps(nextProps) {
   //   let productosBox = this.state.collection;
   //   productosBox.push(nextProps.productos);
@@ -35,11 +59,23 @@ class Collection extends React.Component {
     const cat = this.props.match.params.cat;
     const subcat = this.props.match.params.subcat;
     this.props.getProductos(cat,subcat);
+    this.props.getThumbnails();
+    
       
   }
 
-  componentDidMount(){
+  componentWillReceiveProps(nextProps){
+    if (this.props.match.params.cat !== nextProps.match.params.cat) {
+      this.props.getProductos(nextProps.match.params.cat);
+    }
+    if (this.props.match.params.subcat !== nextProps.match.params.subcat) {
+      this.props.getProductos(nextProps.match.params.cat,nextProps.match.params.subcat);
+    }
     
+  }
+
+  componentDidMount(){
+    document.getElementById('collection').scrollIntoView() 
   }
 
   search(){
@@ -70,4 +106,4 @@ class Collection extends React.Component {
   }
 }
 
-export default connect(mapStateToProps,{ getProductos })(Collection);
+export default connect(mapStateToProps,{ getProductos,getThumbnails })(Collection);

@@ -421,4 +421,20 @@
   }
   .btn-12:active {top: 2px;}
 
+  .btn-13 {
+    border:none;
+    border-bottom: 2pt solid #B68738;
+    border-right: 2pt solid #B68738;
+    border-radius: 25px;
+    min-height: 50px;
+  }
+
+  .btn-13:hover {
+    min-height: 50px;
+    border:none;
+    border-bottom: 0.5pt solid #B68738;
+    border-right: 0.5pt solid #B68738;
+    border-radius: 25px;
+  }
+
   

@@ -1,6 +1,7 @@
 import React    from "react";
 import template from "./admin.jsx";
 import { productos } from '../Firebase';
+import swal from "sweetalert2";
 
 import * as firebase from 'firebase';
 
@@ -66,6 +67,8 @@ class admin extends React.Component {
     const NAME = this.nombre.value;
     const PRICE = this.precio.value;
     const DESC = this.description.value;
+    const CAT = this.cat.value;
+    const SUBCAT = this.subcat.value;
 
     const pCon = document.querySelector(".progressContainer");
     pCon.style.display = "block";
@@ -113,11 +116,23 @@ class admin extends React.Component {
           nombre: NAME,
           precio: PRICE,
           desc: DESC,
-          url: task.snapshot.downloadURL
+          url: task.snapshot.downloadURL,
+          categoria: CAT,
+          subcategoria: SUBCAT
         });
-
+        const toast = swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        
+        toast({
+          type: 'success',
+          title: 'Product uploaded!'
+        })
         pCon.style.display = "none";
-        toast.classList.add("on");
+        // toast.classList.add("on");
 
       }
     )

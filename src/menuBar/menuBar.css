@@ -24,6 +24,250 @@
   position: relative;
 }
 
+#cart{
+  width:300px;
+  height:500px;
+  border:1pt solid #B68738;
+  position: absolute;
+  right:1%;
+  top:100%;
+  z-index:99999;
+  background:whitesmoke;
+  box-shadow: 0.1em 0.1em 2em #B68738;
+  overflow:hidden;
+}
+
+.relative {
+  position: relative;
+}
+
+.closed{
+  display: none;
+}
+
+.cartTittle{
+  display:flex;
+  margin-top:5px;
+  left:0;
+  color:lightslategray;
+  
+}
+
+.gcart {
+  position: absolute;
+  top:0;
+  left:20px;
+  z-index: 999999;
+  color:black;
+  font-weight: 900;
+  border-bottom:3pt solid black;
+  letter-spacing: 2px;
+  
+}
+
+.cartTittle > * {
+  position: relative;
+  top:20px;
+  left:20px;
+  
+}
+
+.bcontainer > button{
+  /* box-shadow: 0.1em 0.09em 0.09em black; */
+  background:rgb(236, 205, 110);
+  width:80%;
+  height:40px;
+  color:white;
+  font-size:20px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border:none;
+  font-family:'RobotoDraft', 'Roboto', sans-serif;
+  text-shadow: 0.01em 0.01em 0.01em black;
+}
+
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.Aligner-item {
+  max-height: 40%;
+  text-align:left;
+}
+
+.Aligner-item--top {
+  align-self: flex-start;
+}
+
+.Aligner-item--bottom {
+  align-self: flex-end;
+}
+
+.bcontainer > button:hover{
+  color:black;
+  text-shadow: 0.1em 0.1em 0.1em grey;
+}
+
+
+.leftText {
+  text-align: left;
+  float:left;
+  margin-left:10px;
+  font-weight: 900px;
+  font-size:16px;
+  
+}
+
+.rightText {
+  margin-right:10px;
+  float:right;
+  font-size:16px;
+}
+
+.cartFooter{
+  position: absolute;
+  bottom:0;
+  display: flex;
+  width:100%;
+  padding:10px;
+  flex-direction: column;
+}
+
+.cartFooter > * {
+  flex:1;
+}
+
+.circleCART{
+  position: absolute;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background: red;
+  color:white;
+  bottom:18px;
+  right:-8px;
+  font-weight: 900;
+  z-index: 1;
+  
+}
+
+.items{
+  padding:10px;
+  width:100%;
+  height:70%;
+  top:11%;
+  position: absolute;
+  overflow: auto;
+}
+
+.circleITEM{
+  width:20px;
+  height:20px;
+  border-radius: 50%;
+  background:#B68738;
+  position: absolute;
+  top:-5px;
+  left:0;
+  right:0;
+  margin:auto;
+}
+
+.plus{
+  margin-left:5px;
+  z-index:99999999 !important;
+}
+
+.plus:hover {
+  cursor: pointer;
+}
+
+.minus:hover{
+  cursor: pointer;
+}
+
+.minus{
+  margin-right: 5px;
+  z-index:999;
+}
+
+.more{
+  position: absolute;
+  margin:0px 5px;
+  bottom:0;
+  left:10%;
+}
+
+.item {
+  display:flex;
+  border-bottom:0.01em solid black;
+  width:100%;
+  height:150px;
+  position: relative;
+}
+
+
+.cartItemContainer {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.textWrapper{
+  display: flex;
+  vertical-align: middle;
+  width:100%;
+  height: 100%;
+  position: absolute;
+  flex-direction: column;
+  
+}
+
+.cartItemContainer > button {
+  margin-top:30%;
+  
+}
+
+.cartItemContained{
+  margin:auto;
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  overflow: hidden;
+  display: flex;
+}
+
+.itemTittle{
+  font-weight: 800;
+  font-family: 'RobotoDraft', 'Roboto', sans-serif;
+  text-align: left;
+  font-size: 15px;
+  margin:10% 0px 0px 10px;
+  
+}
+
+
+.cartItemContained > img {
+  width: 100%;
+  object-fit: cover;
+  margin:5px;
+}
+
+
+
+#EX {
+  position: absolute;
+  margin:0px 5px;
+  top:0;
+  right:0;
+  cursor: pointer;
+  font-size: 30px;
+}
+
 .shortMenu{
   position: fixed;
   background:whitesmoke;
@@ -33,23 +277,55 @@
   top:0;
   left:-200px;
   z-index:99;
+  padding-top:35px;
+  
+}
+
+.shortlogWrapper {
+  position: relative;
+  padding-left: 35%;
+  
+  
   
 }
 
 .leftMenu{
   position:absolute;
-  top:50px;
+  top:100px;
   left:80px;
   
   width:200px;
   
 }
 
-.extended {
+.front {
   display:flex;
-  margin: 5px;
-  border-bottom:0.5pt solid #D4BF7F;
+  /* position: fixed; */
   
+  width:90vw;
+  z-index: 2222;
+  top:137px;
+  height:80px;
+  
+}
+
+.back {
+  position: relative;
+  border-bottom:0.5pt solid #D4BFAF;
+  width:93.5vw;
+  height:70px;
+  z-index: 1;
+}
+
+
+
+.icons > span > i:hover{
+  color:black;
+  font-size: 30px !important;
+}
+
+.pointer{
+  cursor: pointer;
 }
 
 .snip1189 {
@@ -60,11 +336,90 @@
   color: black !important;
   padding-top:10px;
 }
+
+#collection:hover ~ #hiddenMenu{
+  opacity: 0.8 !important;
+  z-index: 999 !important;
+}
+#hiddenMenu:hover{
+  opacity: 0.8 !important;
+  z-index: 999 !important;
+}
+#hiddenMenu {
+  position: absolute;
+  height:90px;
+  background:white;
+  opacity: 0;
+  top: 100%;
+  left:0;
+  right:0;
+  width:94vw;
+  margin:auto;
+  z-index:-9;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#hiddenMenu > ul {
+  display: flex;
+  flex:1;
+  margin:auto;
+}
+
+#hiddenMenu > ul > li {
+  flex:1;
+}
+
+#hiddenMenu > ul > li:hover {
+  color: #B68738;
+}
+
+/* **************** */
+#lookbook:hover ~ #hiddenMenuLookBook{
+  opacity: 0.8 !important;
+  z-index: 999 !important;
+}
+#hiddenMenuLookBook:hover{
+  opacity: 0.8 !important;
+  z-index: 999 !important;
+}
+#hiddenMenuLookBook {
+  position: absolute;
+  height:90px;
+  background:white;
+  opacity: 0;
+  top: 100%;
+  left:0;
+  right:0;
+  width:94vw;
+  margin:auto;
+  z-index:-9;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#hiddenMenuLookBook > ul {
+  display: flex;
+  flex:1;
+  margin:auto;
+}
+
+#hiddenMenuLookBook > ul > li {
+  flex:1;
+}
+
+#hiddenMenuLookBook > ul > li:hover {
+  color: #B68738;
+}
+
+/* ************************* */
+
 .snip1189 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
+  cursor: pointer;
 }
 .snip1189 li {
   display: inline-block;
@@ -128,9 +483,12 @@
 }
 
 .logWrapper{
+  position: relative;
   color:grey;
   cursor: pointer;
   text-align: center;
+  width:100px;
+  
   
   
 }
@@ -219,12 +577,13 @@
 }
 
 
+
 @keyframes open {
   0%{
     opacity:0 !important;
   }
-  80%{
-    opacity: 0.1;
+  99%{
+    opacity: 0.1 !important;
   }
   100% {
     opacity:1;
@@ -234,12 +593,14 @@
 
 @keyframes close {
   0%{
+    width:220px;
     left:0px;
   }
-  50%{
-    opacity: 0.1;
+  5%{
+    opacity: 0.1 !important;
   }
   100% {
+    width:220px;
     left:-220px;
     opacity:0;
   }

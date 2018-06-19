@@ -21,31 +21,32 @@ function template() {
          let add = "";
 
         if(key%2)
-          add = "right";
+          add = "Reverse";
         else 
           add = "";
 
           return(
           
-          <div className={"product "+add} key={key}>
+          <div className={"Aligner product"+add} key={key}>
               <LazyImage unloadedSrc="../assets/images/clear.png" src={producto.url} ></ LazyImage>
-              <footer>
-                <div className="tittle">
+              <footer className="flex ">
+                {/* <div className="tittle">
                   {
                    producto.nombre.charAt(0).toUpperCase() + producto.nombre.slice(1)
                   }
-                </div>
+                </div> */}
+                <div className="header">
+                
+                <span> <h1>{producto.categoria}-{producto.subcategoria}</h1></span>
+              </div>
                 <div className="prodDescription">
                   {producto.desc}
                 </div>
                 <div className="price">
-                <div className="header">
                 
-                  <span> <h1>{producto.categoria}-{producto.subcategoria}</h1></span>
-                </div>
                 </div>
                 <br/>
-                <FancyButton type={12} desc="MORE INFO"></FancyButton>
+                <FancyButton type={13} link={"/Collection/"+producto.categoria+"/"+producto.subcategoria} desc="SHOP NOW"></FancyButton>
               </footer>
             </div>
           )

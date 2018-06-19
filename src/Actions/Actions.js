@@ -1,7 +1,11 @@
-import { productos,database,featuredProductos } from '../Firebase';
+import { productos,database,featuredProductos,thumbnails,Users,Carts } from '../Firebase';
 import _  from 'lodash';
+import * as firebase from "firebase";
 
 export const FETCH_PRODUCTOS = 'fetch_productos';
+export const FETCH_THUMBNAILS = "fetch_thumbnails";
+export const FETCH_USER = "fetch_user"
+export const FETCH_CART = "fetch_cart"
 
 
 export function getPartidos(){
@@ -17,6 +21,50 @@ export function getPartidos(){
 			})
 		})
 	}
+}
+
+export function getUser(){
+
+	var user = firebase.auth().currentUser;
+	return dispatch => { 
+		Users.child(user.uid).on("value", function(snapshot) {
+			dispatch({
+				type: FETCH_USER,
+				payload: snapshot.val()
+			})
+		})
+	}
+}
+
+export function getCartById(id){
+	if (id)
+	return dispatch => { 
+		Carts.child(id).on("value", function(snapshot) {
+			dispatch({
+				type: FETCH_CART,
+				payload: snapshot.val()
+			})
+		})
+	}
+	else
+		return false;
+}
+
+export function getThumbnails(){
+	return dispatch => { 
+			
+		thumbnails.on("value", function(snapshot) {
+			// console.log("9090909090",Object.values(snapshot.val())[0].thumbnail);
+		  
+		// const string = JSON.stringify(data.val());
+		
+			dispatch({
+				type: FETCH_THUMBNAILS,
+				payload: snapshot.val()
+			})
+		})
+	}
+
 }
 
 export function getProductos(cat,subcat,queryText){

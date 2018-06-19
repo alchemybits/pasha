@@ -13,6 +13,7 @@ class Logo extends React.Component {
   }
 
   refresh(){
+    if(!this.props.noclick)
     window.location = "/";
   }
 

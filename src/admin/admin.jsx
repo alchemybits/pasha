@@ -16,6 +16,25 @@ function template() {
           <input type="text" className="admin" id="name" name="user_name" placeholder="Pasha" ref={el => this.nombre = el} onChange={this.check}/>
           <label for="name" className="admin">Price</label>
           <input type="text" id="price" className="admin" name="user_name" placeholder="Price" ref={el => this.precio = el} onChange={this.check}/>
+          <label for="sele" className="admin">Category</label>
+          <select name="sele" id="sele" ref={el => this.cat = el} onChange={this.check}>
+            <option value="Flats">Flats</option>
+            <option value="Wedges">Wedges</option>
+            <option value="Hair-Accesories">Hair accessories</option>
+            <option value="Heels">Heels</option>
+          </select>
+
+          <label for="subsele" className="admin">Sub Category</label>
+          <select name="subsele" id="subsele" ref={el => this.subcat = el} onChange={this.check}>
+            <option value="none">none</option>
+            <option value="Thong">Thong</option>
+            <option value="Ankle Strap">Ankle Strap</option>
+            <option value="Sling Back">Sling Back</option>
+            <option value="Slip on">Slip on</option>
+            <option value="Gladiator">Gladiator</option>
+            
+          </select>
+          {/* <input type="text" id="price" className="admin" name="user_name" placeholder="Price" ref={el => this.precio = el} onChange={this.check}/> */}
           <label for="bio" className="admin">Description</label>
           <textarea id="desc" name="user_bio" placeholder="Write a brief description..." ref={el => this.description = el} onChange={this.check}></textarea>
         </fieldset>

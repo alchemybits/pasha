@@ -50,9 +50,13 @@ constructor(props) {
             displayName: this.state.name
         }).then(function() {
             //console.log("YES");
+
+
         }, function(error) {
             //console.log("wat?");
-        });        
+        });
+       
+
     }, function(error) {
         // Handle Errors here.
         var errorCode = error.code;
