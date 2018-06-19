@@ -2,6 +2,7 @@ import "./FeaturedProducts.css";
 import React from "react";
 import LazyImage from "../LazyImage/LazyImage";
 import FancyButton from "../FancyButton/FancyButton";
+import { Link } from 'react-router-dom';
 
 function template() {
   
@@ -46,7 +47,8 @@ function template() {
                 
                 </div>
                 <br/>
-                <FancyButton type={13} link={"/Collection/"+producto.categoria+"/"+producto.subcategoria} desc="SHOP NOW"></FancyButton>
+                <Link to={"/Collection/"+producto.categoria}><FancyButton type={13} desc="SHOP NOW"></FancyButton></Link>
+                
               </footer>
             </div>
           )
