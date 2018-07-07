@@ -45,9 +45,16 @@ function logout(path,func,cartFunc,itemslen){
 
 function template() {
 	let TOTAL =0;
-	let items = [{nombre:""}];
+	let TOTALITEMS = 0;
+	let items = [{nombre:"",cant:0}];
 	if(this.props.items)
 		items = this.props.items;
+	
+	let array = [];
+	items.map(item => {array.push(item.cant)});
+
+	if(array.length > 0)
+		TOTALITEMS = array.reduce((TOTAL,n) => TOTAL + n);
 
   return (
     <div className="menu-bar" id="menuBarTracker" onScroll={this.scrollTrack()}>
@@ -55,13 +62,14 @@ function template() {
 			<p className="gcart">SHOPPING CART</p>
 			<div id="EX" onClick={() => this.closeCart()}>&times;</div>
 			<div className="cartTittle">
-				<p>you have <span style={{color:"red"}}>{items.length} item(s)</span> in your shopping cart</p>
+				<p>you have <span style={{color:"red"}}>{TOTALITEMS} item(s)</span> in your shopping cart</p>
 			</div>
 			<div className="items">
 			{
 				
 				items.map((item,index) => {
 					TOTAL += item.total;
+					
 					return (
 					<div key={index} className="item">
 						<div className="cartItemContainer f2">
@@ -83,8 +91,8 @@ function template() {
 							</div> */}
 
 								<div className="Aligner-item">
-									<h4 className="itemTittle">{item.nombre}</h4>
-									<p className="itemTittle "><span className="" style={{color:"lightslategray"}}>{item.cant}x</span> HKD {item.precio}</p>
+									<h4 className="itemTittle">{item.nombre.toUpperCase()}</h4>
+									<p className="itemTittle " style={{fontWeight:"500",color:"grey"}}><span className="" style={{color:"lightslategray"}}>{item.cant}x</span> HKD {item.precio}</p>
 								</div>
 								<div className="more">
 									<span className="minus" onClick={() => {this.props.minusItem(item,true)}}><i className="material-icons" >remove</i></span>
@@ -159,7 +167,7 @@ function template() {
 
 					
 				</ul>
-		<div className="logWrapper">{this.props.islogged ? logout(this.props.history.location.pathname,this.props.signOut,(() => this.closeCart()),items.length) : guest(this.props.history.location.pathname,(() => this.closeCart()),items.length)}</div>
+		<div className="logWrapper">{this.props.islogged ? logout(this.props.history.location.pathname,this.props.signOut,(() => this.closeCart()),TOTALITEMS) : guest(this.props.history.location.pathname,(() => this.closeCart()),TOTALITEMS)}</div>
 			
 			
     	</div>

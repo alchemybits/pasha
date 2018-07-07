@@ -117,7 +117,7 @@ export function getFeaturedProductos(){
 		// featuredProductos.orderByChild("nombre").startAt(queryText)
 		// .endAt(queryText+"\uf8ff").on('child_added', data => {
 			
-		featuredProductos.limitToLast(4).on('value', data => {
+		featuredProductos.limitToFirst(4).on('value', data => {
 		// const string = JSON.stringify(data.val());
 		
 			dispatch({

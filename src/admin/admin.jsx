@@ -18,7 +18,7 @@ function template() {
           <input type="text" id="price" className="admin" name="user_name" placeholder="Price" ref={el => this.precio = el} onChange={this.check}/>
           <label for="sele" className="admin">Category</label>
           <select name="sele" id="sele" ref={el => this.cat = el} onChange={this.check}>
-            <option value="Flats">Flats</option>
+            <option value="Flat">Flats</option>
             <option value="Wedges">Wedges</option>
             <option value="Hair-Accesories">Hair accessories</option>
             <option value="Heels">Heels</option>
