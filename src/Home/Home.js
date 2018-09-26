@@ -4,6 +4,8 @@ import {} from '../Firebase.js';
 import _ from 'lodash';
 import { withRouter } from 'react-router-dom';
 import { Carts } from '../Firebase';
+import LazyLoad from 'react-lazyload';
+import PlaceholderComponent from "../PlaceholderComponent/PlaceholderComponent";
 
 
 
@@ -361,21 +363,36 @@ class Home extends React.Component {
 				}
 		}
 	}
+	showFrontImage(){
+		return this.props.history.location.pathname === "/aboutus"?false:true;
+		
+	}
 
 	
 
   render() {
+
     return (
   	
     <div className="home ">
     	<MenuBar isBottom={this.state.isBottom} items={this.state.items} removeItem={this.removeItem} addItem={this.addItem} minusItem={this.minusItem} signOut={this.signOut} islogged={this.logged} ></MenuBar>
-			<div className="frontImage">
+			
       {/* https://firebasestorage.googleapis.com/v0/b/pashav2-eef6b.appspot.com/o/productos%2F3.jpg?alt=media&token=696888a2-4a74-4ac1-a3fa-872076c33730 */}
       {/* https://firebasestorage.googleapis.com/v0/b/pashav2-eef6b.appspot.com/o/productos%2FBloko.jpg?alt=media&token=7250d094-1a9c-47a4-aa9e-294e768a96f2 */}
-        <LazyImage className="objetFit" unloadedSrc="../assets/images/clear.png" src="https://firebasestorage.googleapis.com/v0/b/pashav2-eef6b.appspot.com/o/productos%2FBloko.jpg?alt=media&token=7250d094-1a9c-47a4-aa9e-294e768a96f2" ></ LazyImage>
+    {
+    	this.showFrontImage()?
+      	<div className="frontImage">
+	      	<LazyLoad height={200} placeholder={<PlaceholderComponent />}>
+	        	<img className="objetFit" src="https://firebasestorage.googleapis.com/v0/b/pashav2-eef6b.appspot.com/o/productos%2FBloko.jpg?alt=media&token=7250d094-1a9c-47a4-aa9e-294e768a96f2" />
+	        </LazyLoad>
+        </div>
+        :
+        <span></span>
+    }
+        
         {/* <video muted autoPlay bucle className="objetFit" src="https://firebasestorage.googleapis.com/v0/b/pashav2-eef6b.appspot.com/o/productos%2FPasha.mp4?alt=media&token=573b7806-0508-4618-beea-9f79993f954b"></video> */}
       
-      </div>
+      
     	
     		<Switch>
 					<Route path = "/collection/:cat/:subcat" render = {routeProps => <Collection {...routeProps} addItem={this.addItem} />}/>
