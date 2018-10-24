@@ -41,26 +41,33 @@
 }
 
 .content1,.content2,.content3 {
-    max-height:230px;
+    max-height:240px;
     overflow: hidden;
     border:1pt solid black;
+
 }
 
-.content1  > img{  
 
-    width:100%;
+.content1  > img{  
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     background:orange;
     grid-area:content1;
 }
 
 .content2  > img { 
-    width:100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     background: orange;
     grid-area:content2;
 }
 
-.content3 > img{    
-    width:100%;
+.content3 > img{   
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     background: orange;
     grid-area:content3;
 }
