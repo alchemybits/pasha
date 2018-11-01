@@ -5,8 +5,8 @@ function template() {
   return (
     <div className="logo" onClick={this.refresh}>
       <h5 style={{fontSize: this.props.fontSize + 'px'}} >
-      <div className="closedBox">
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox={'0 0 1016 ' + (this.props.iconHeight-200)} height={this.props.iconHeight} width={this.props.iconWidth} id='svg2' style={{left:0}} >
+      <div className="closedBox" >
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox={'10 250 1050 ' + (this.props.iconHeight - 90)} height={this.props.iconHeight - 1} width={this.props.iconWidth} id='svg2' style={{height: "150px", left:0,background:"", width:"70%"}} >
             <defs id='defs6'>
                 <clippath id='clipPath18'>
                     <path id='path16' d='m 0,-612 c 0,0 792,0 792,0 0,0 0,612 0,612 C 792,0 0,0 0,0 0,0 0,-612 0,-612 Z'
