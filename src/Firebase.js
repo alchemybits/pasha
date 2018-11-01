@@ -1,14 +1,21 @@
  import * as firebase from 'firebase';
 
-  var config = {
-    apiKey: "AIzaSyBgcAPcCOAeYpQmC1HzSHfKl1skBJ9_RV0",
-    authDomain: "atiname-fe6dc.firebaseapp.com",
-    databaseURL: "https://atiname-fe6dc.firebaseio.com",
-    projectId: "atiname-fe6dc",
-    storageBucket: "atiname-fe6dc.appspot.com",
-    messagingSenderId: "1072376659690"
-  };
+ var config = {
+  apiKey: "AIzaSyDH2nrDlZqBLfKuyLNdvR7thVqQ9ZCwUG0",
+  authDomain: "pashav2-eef6b.firebaseapp.com",
+  databaseURL: "https://pashav2-eef6b.firebaseio.com",
+  projectId: "pashav2-eef6b",
+  storageBucket: "pashav2-eef6b.appspot.com",
+  messagingSenderId: "1057047902110"
+};
+
   firebase.initializeApp(config);
 
-  export const database = firebase.database().ref('Torneo/');
+  export const database = firebase.database().ref('/');
+  export const productos = firebase.database().ref('Productos/');
+  export const featuredProductos = firebase.database().ref('Productos/');
+  export const thumbnails = firebase.database().ref('images/');
+  export const Users = firebase.database().ref('Users/');
+  export const Carts = firebase.database().ref('Carts/');
+  // export const addProducto = firebase.child("Productos");
 

@@ -1,3 +1,172 @@
-.slider > img {
-    max-width:80%;
+.slider{
+	width:90vw;
+	/* border:1pt solid black; */
+	height:500px;
+	position:relative;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	margin:auto;
+	display:flex;
+    overflow:hidden;
+}
+
+
+.slideswrap {
+	flex:30;
+    /* border:2pt solid grey; */
+    height:100%;
+    width:100%;
+	position: relative;
+	overflow:hidden;
+}
+
+.navigationBar {
+	display:flex;
+	flex-direction:column;
+	flex:2;
+	/* border:2pt solid teal; */
+	text-align:center;
+}
+
+.navigationBar > * {
+	flex:1;
+}
+
+.imgwrapper {
+	width:100%;
+	height:100%;
+	padding:20px;
+}
+
+.imgwrapper > img {
+	position:absolute;
+	margin:auto;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	width:100%;
+	max-width:800px;
+}
+
+/* ----------- SLIDES --------- */
+.slide1{
+	position:relative;
+	height:100%;
+	width:100%;
+	
+}
+
+.moveup {
+	animation: slideUp1 1s  2s linear forwards;
+}
+
+.slide2{
+	position:relative;
+	height:100%;
+	width:100%;
+}
+
+.slideswrap > * {
+	position:absolute;
+    display:none;
+    height:100%;
+}
+
+
+.active {
+	display:block;
+	animation: slideDown 2s forwards;
+}
+
+
+/* --------- KEYFRAMES -------- */
+
+@keyframes slideDown {
+	0% {
+		top:-100%;
+		opacity: 0;
+		
+	}
+	50% {
+		opacity:0.5
+	}
+	
+	100% {
+		top:0;
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	0% {
+		top:0;
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.1;
+	}
+	
+	100% {
+		top:-100%;
+		opacity:0;
+	}
+}
+
+/* ---------- HELPERS --------- */
+.growOnHover:hover {
+	font-size:30px;
+	
+}
+
+.f1 {
+	flex:1;
+}
+.f5 {
+	flex:5;
+}
+
+/* ---------------- images -------- */
+.slideimg {
+	padding:15px;
+	max-width:500px;
+	/* border:3pt solid red; */
+	border-radius: 30% 10%;
+	background-image:
+	linear-gradient(to bottom left, #B68737, #000);
+	
+	
+}
+
+.hundred {
+	height:100%;
+}
+
+.imgDescription{
+	font-family: 'Do Hyeon', sans-serif;
+	width:100%;
+	position: relative;
+	top:10%;
+}
+
+.imgDescription > * {
+	font-size:100px;
+	font-weight: 900;
+	
+}
+
+.text-gold{
+	color:#B68737;
+}
+
+.red{
+	background:red;
+
+}
+
+.blue {
+	background: blue;
 }

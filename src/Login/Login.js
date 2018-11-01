@@ -27,7 +27,7 @@ constructor(props) {
 
   componentDidMount(){
     const pathArray = this.props.location.pathname.split("/");
-    const found = pathArray.find(values => values=='register');
+    const found = pathArray.find(values => values==='register');
     if(found){
       const container = document.querySelector('.container');
 
@@ -49,14 +49,18 @@ constructor(props) {
         user.updateProfile({
             displayName: this.state.name
         }).then(function() {
-            console.log("YES");
+            //console.log("YES");
+
+
         }, function(error) {
-            console.log("wat?");
-        });        
+            //console.log("wat?");
+        });
+       
+
     }, function(error) {
         // Handle Errors here.
         var errorCode = error.code;
-        var errorMessage = error.message;
+        // var errorMessage = error.message;
         // [START_EXCLUDE]
         if (errorCode === 'auth/weak-password') {
             alert('The password is too weak.');

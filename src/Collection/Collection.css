@@ -1,0 +1,282 @@
+.tree{
+  height:100px;
+  width:100px;
+}
+.collection {
+    /* border:3pt solid teal; */
+    width:80vw;
+    
+    position: relative;
+    margin:auto;
+    display: flex;
+    max-width: 80vw;
+    flex-wrap: wrap;
+    -webkit-align-items: flex-start; 
+    align-items: flex-start; 
+    justify-content: flex-start;
+}
+
+a:hover {
+  color: #b68738;
+}
+
+a {
+  
+  color: grey;
+  position: relative;
+  text-decoration: none;
+}
+
+.collection > * {
+    flex:1 auto;
+}
+
+.searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.searchbar #searchbar-input {
+    border: 0px solid;
+    border-bottom: 2px solid black;
+    width: 0px;
+    font-size: 3rem;
+    outline: none;
+    color: #606060;
+    background: none;
+  }
+  
+  .searchbar .fa-times {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  .searchbar .fa-search {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .opensearch {
+    animation: open 1s forwards;
+  }
+
+  .closesearch {
+      animation: close 1s forwards;
+  }
+
+  
+
+@keyframes open {
+    0% {
+      width:0px;
+    }
+    100% {
+        width:300px;
+    }
+}
+
+@keyframes close {
+    0% {
+      width:300px;
+    }
+    100% {
+        width:0px;
+    }
+}
+  
+
+/* //////////////////////////////////////////////////////////// */
+
+
+.treeview {
+    margin-bottom:100px ;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  .treeview:hover input ~ label:before,
+  .treeview.hover input ~ label:before {
+    opacity: 1;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+  }
+  .treeview ul {
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -ms-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+    list-style: none;
+    padding-left: 1em;
+    text-align: left;
+    position: absolute;
+    
+  }
+  .treeview ul li.mainLi {
+    display:inline-block;
+    margin: 30px;
+  }
+
+  .space {
+    grid-area: space;
+  }
+
+  .productC {
+    display:grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 2fr 50px 30px 1fr 20px;
+    grid-template-areas:
+      ". picture ."
+      "name name name"
+      ". price ."
+      "button button button"
+      ". space ."
+      ;
+
+
+    animation: init 1s 1s ease-in forwards;
+    opacity: 0;
+    border:1px solid black;
+    padding: 5px;
+    max-width: 300px;
+    margin:5px;
+  }
+
+  .buttonC {
+    grid-area: button;
+  }
+
+  .productC > img {
+    object-fit: cover;
+    width: 100%;
+    max-height:100px;
+    max-width:180px;
+    grid-area:picture;
+    
+  }
+
+  .titleC {
+    grid-area: name;
+  }
+
+  .priceC {
+    grid-area: price;
+  }
+
+  .product > footer {
+    
+    display:flex;
+    
+    /* align-items: flex-start; */
+  }
+
+  .productReverse > footer {
+    
+    display:flex;
+    
+    /* align-items: flex-end; */
+  }
+
+  .productReverse {
+    margin:50px;
+    display:flex;
+    animation: init 1s 1s ease-in forwards;
+    opacity: 0;
+    flex-direction: row-reverse;
+    
+  }
+
+  .productReverse > img {
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+    max-height: 400px;
+    width:70%;
+    object-fit: cover;
+    flex:1;
+  }
+
+  .flex{
+    display:flex;
+  }
+
+  .flex > * {
+    flex:1;
+  }
+
+  footer {
+    flex-direction: column;
+    top:0;
+    position: relative;
+    width:20vw;
+    padding:10px;
+}
+
+  .treeview ul li span {
+      
+      text-align: left;
+    -webkit-transition-property: color;
+    -moz-transition-property: color;
+    -ms-transition-property: color;
+    -o-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -ms-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+  }
+  .treeview ul li span:hover {
+    color: #b68738;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -ms-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+  .treeview input {
+    display: none;
+  }
+  .treeview input:checked ~ ul {
+    display: none;
+  }
+  .treeview input ~ label {
+    cursor: pointer;
+  }
+  .treeview input ~ label:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    margin-left: -1em;
+    margin-top: 0.4em;
+    border-width: 4px;
+    border-style: solid;
+    border-top-color: transparent;
+    border-right-color: rgba(255, 255, 255, 0.5);
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+    border-left-color: transparent;
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -ms-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -ms-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+  }
+  .treeview input:checked ~ label:before {
+    margin-left: -0.8em;
+    border-width: 5px;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: rgba(255, 255, 255, 0.5);
+  }
+  

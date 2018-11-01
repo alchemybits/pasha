@@ -1,12 +1,22 @@
 import React    from "react";
-import M    from "materialize-css";
 import template from "./ProfileMenu.jsx";
 
 class ProfileMenu extends React.Component {
+	close(){
+		const menu = document.querySelector(".customMenu");
+		menu.classList.add("hide");
+		menu.classList.remove("show");
+	}
 
+	showMenu(){
+		const menu = document.querySelector(".customMenu");
+		menu.classList.add("show");
+		menu.classList.remove("hide");
+		console.log(menu);
+	}
 	componentDidMount(){
-		var elem = document.querySelector('.dropdown-trigger');
-  		var instance = M.Dropdown.init(elem);
+		
+		
 	}
 
   render() {

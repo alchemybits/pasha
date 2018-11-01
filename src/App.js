@@ -1,9 +1,10 @@
-import React from 'react';
+  import React from 'react';
 import * as firebase from 'firebase';
 import Login from './Login/Login';
 import Home from './Home/Home';
 import Loading from './Loading/Loading';
-import Landing from './Landing/Landing';
+import admin from './admin/admin';
+// import Landing from './Landing/Landing';
 
 import { connect } from 'react-redux';
 
@@ -16,7 +17,9 @@ import {  BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-
 
 
 function PrivateRoute ({component: Component, authed, ...rest}) {
+  //console.log("$$$$$",authed);
   return (
+    
     <Route
       {...rest}
       render={(props) => authed === true
@@ -68,6 +71,21 @@ class App extends React.Component {
 
   }
 
+  hashLinkScroll() {
+    const { hash } = window.location;
+    console.log("YEP HASH HERE",hash);
+		if (hash !== '') {
+			// Push onto callback queue so it runs after the DOM is updated,
+			// this is required when navigating from a different page so that
+			// the element is rendered on the page before trying to getElementById.
+			setTimeout(() => {
+				const id = hash.replace('#', '');
+				const element = document.getElementById(id);
+				if (element) element.scrollIntoView();
+			}, 0);
+		}
+	}
+
   componentWillUnmount () {
     this.removeListener()
   }
@@ -75,9 +93,9 @@ class App extends React.Component {
   render() {
     return this.state.loading === true ? <Loading /> : (
       
-      <Router>
+      <Router onUpdate={() => this.hashLinkScroll()}>
         <Switch>
-            {/* <PrivateRoute authed={this.state.authed} path='/App' component={Home} /> */}
+            <PrivateRoute authed={this.state.authed} path='/admin' component={admin} />
             <PublicRoute authed={this.state.authed} path='/login' component={Login} />
             <Route path = "/" authed={this.state.authed} component = {Home}/>
           

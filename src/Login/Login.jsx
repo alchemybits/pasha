@@ -1,12 +1,12 @@
 import "./Login.css";
 import React from "react";
-import Logo from "../logo/logo";
+import { LogoB } from "../logo/logo";
 
 function template() {
   return (
   	<div>
 <div className="pen-title">
-   <Logo iconWidth="270" iconHeight="200" ></Logo>
+   <LogoB iconWidth="270" iconHeight="200" ></LogoB>
 </div>
 <div className="container">
   <div className="card"></div>
@@ -26,7 +26,7 @@ function template() {
       <div className="button-container">
         <button><span>Go</span></button>
       </div>
-      <div className="footer"><a href="#">Forgot Password?</a></div>
+      <div className="footer"><a >Forgot Password?</a></div>
     </form>
   </div>
   <div className="card alt">
